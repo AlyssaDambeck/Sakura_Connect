@@ -15,20 +15,28 @@
     border-radius:30px;
 
     background:
-    rgba(255,255,255,.15);
+    rgba(255, 245, 245, .18);
 
-    backdrop-filter:blur(18px);
+    border:
+    1px solid rgba(255, 255, 255, .60);
+
+    backdrop-filter:blur(22px);
+
+    box-shadow:
+    0 15px 35px rgba(0, 0, 0, .18);
 
     text-align:center;
 }
 
 .register-card input{
+    background:
+    rgba(255, 255, 255, .88);
+
+    color:#2d1b28;
+
     padding:14px;
-
     border:none;
-
     border-radius:12px;
-
     outline:none;
 }
 
@@ -48,5 +56,10 @@
 
 .register-card a{
     text-decoration:none;
-    color:#684f71;
+    color:#2d1b28;
+    font-weight: 700;
+}
+
+.register-card a:hover{
+    color:#b46b8b;
 }

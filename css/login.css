@@ -14,7 +14,9 @@ body{
     align-items:center;
 
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        linear-gradient(
+        rgba(255, 220, 230, 0.08), 
+        rgba(230, 190, 210, 0.12)),
         url("../images/login.png");
 
 
@@ -35,15 +37,15 @@ body{
     border-radius:30px;
 
     background:
-    rgba(255,255,255,.15);
+    rgba(255, 245, 245, .18);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(22px);
 
     border:
-    1px solid rgba(255,255,255,.3);
+    1px solid rgba(255, 255, 255, .60);
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.2);
+    0 15px 35px rgba(0, 0, 0, .18);
 
     text-align:center;
 }
@@ -54,12 +56,16 @@ body{
 }
 
 h1{
-    color:#4a3554;
+    color:#2d1b28;
+    font-size: 42px;
+    font-weight: 700;
     margin-bottom:10px;
 }
 
 .subtitle{
-    color:#684f71;
+    color:#382431;
+    font-size: 18px;
+    font-weight:500;
     margin-bottom:35px;
 }
 
@@ -68,7 +74,7 @@ h1{
     align-items:center;
 
     background:
-    rgba(255,255,255,.7);
+    rgba(255,255,255,.88);
 
     padding:15px;
 
@@ -88,6 +94,13 @@ h1{
     outline:none;
 
     width:100%;
+
+    color:#2f1f33;
+}
+
+.input-group input::placeholder{
+    color:#6d5664;
+    opacity: 1;
 }
 
 .login-btn{
@@ -121,7 +134,11 @@ h1{
 
     text-decoration:none;
 
-    color:#7a4f6b;
+    color:#2d1b28;
 
-    font-weight:600;
+    font-weight:700;
+}
+
+.register-link:hover{
+    color:#d887a7;
 }

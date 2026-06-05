@@ -4,6 +4,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body{
@@ -133,9 +134,15 @@ body{
     border-radius: 20px;
 
     background:
-    rgba(255, 248, 245, .65);
+    rgba(255,245,245,.18);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(22px);
+
+    border:
+    1px solid rgba(255,255,255,.60);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.18);
 }
 
 .actions{

@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -104,4 +103,4 @@ function returnWithError($err)
 	);
 }
 ?>
-```
+

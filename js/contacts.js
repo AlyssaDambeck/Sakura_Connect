@@ -120,6 +120,7 @@ function searchContact()
             this.status == 200
         )
         {
+            console.log(xhr.responseText);
             let jsonObject =
                 JSON.parse(
                     xhr.responseText

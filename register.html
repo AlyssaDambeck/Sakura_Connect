@@ -1,10 +1,15 @@
+<!-- Chatgpt used for clean up and positioning, also used for petals-->
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Create Account</title>
 
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/register.js"></script>
 </head>
+
+
 <body>
 
 <div class="petals">
@@ -24,16 +29,13 @@
 
     <h1>Create Account</h1>
 
-    <input type="text" placeholder="First Name">
-
-    <input type="text" placeholder="Last Name">
-
-    <input type="text" placeholder="Username">
-
-    <input type="password" placeholder="Password">
+    <input id="firstName" type="text" placeholder="First Name">
+    <input id="lastName" type="text" placeholder="Last Name">
+    <input id="username" type="text" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
 
 
-    <button>
+    <button onclick="doRegister()">
         Create Account
     </button>
 

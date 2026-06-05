@@ -20,9 +20,24 @@ body{
     background-size:cover;
 }
 
+.logo-section{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo{
+    font-size: 65px;
+}
+
+.logo-section h2{
+    margin-top: 13px;
+    font-size: 30px;
+
+}
+
 .sidebar{
 
-    width:250px;
+    width:290px;
 
     background:
     rgba(92,66,49,.82);
@@ -38,18 +53,20 @@ body{
     gap:15px;
 }
 
+.user-info{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #f5d7df;
+    font-size: 20px;
+}
+
 .sidebar button{
 
-    padding:12px;
-
+    padding:15px;
     border:none;
-
     border-radius:10px;
-
     background:#d887a7;
-
     color:white;
-
     cursor:pointer;
 }
 
@@ -60,40 +77,47 @@ body{
     padding:40px;
 }
 
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
 .top-bar input{
 
     width:100%;
-
-    padding:15px;
-
+    padding:18px;
+    font-size: 18px;
     border:none;
 
-    border-radius:15px;
+    border-radius:18px;
 
     background:
     rgba(255,255,255,.75);
+
+    box-shadow:
+    0 8px 20px rgba(0, 0, 0, .1);
 }
 
 .contacts-grid{
 
     margin-top:30px;
-
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fill,minmax(300px,1fr));
+    repeat(auto-fit, 320px);
 
+    justify-content: left;
     gap:20px;
 }
 
 .contact-card{
-
-    padding:25px;
-
-    border-radius:20px;
+    width: 320px;
+    padding: 25px;
+    border-radius: 20px;
 
     background:
-    rgba(255,248,245,.75);
+    rgba(255, 248, 245, .65);
 
     backdrop-filter:blur(15px);
 }

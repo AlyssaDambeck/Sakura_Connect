@@ -6,13 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Where your connections blossum">
-	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="js/login.js"></script>
 
 
     <title>Sakura Connect</title>
 
 </head>
+
+
+
 <body>
 
 <div class="petals">
@@ -41,16 +45,22 @@
     </p>
 
     <div class="input-group">
-        <i class="fa-regular fa-user"></i>
-        <input type="text" placeholder="Username">
+        <input
+            id="loginName"
+            type="text"
+            placeholder="Username">
     </div>
 
     <div class="input-group">
-        <i class="fa-solid fa-lock"></i>
-        <input type="password" placeholder="Password">
+        <input
+            id="loginPassword"
+            type="password"
+            placeholder="Password">
     </div>
 
-    <button class="login-btn">
+    <button
+        class="login-btn"
+        onclick="doLogin()">
         Sign In
     </button>
 

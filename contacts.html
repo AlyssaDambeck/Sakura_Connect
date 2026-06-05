@@ -1,11 +1,16 @@
+<!-- Chatgpt used for clean up and positioning -->
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Sakura Connect Contacts</title>
 
-    <link rel="stylesheet" href="../css/contacts.css">
+    <link rel="stylesheet" href="css/contacts.css">
+    <script src="js/contacts.js"></script>
 </head>
+
+
 <body>
 
 <div class="petals">
@@ -21,13 +26,31 @@
 
 <div class="sidebar">
 
-    <h2>🌸 Sakura Connect</h2>
+    <div class="logo-section">
+        <div class="logo">🌸</div>
+        <h2>Sakura Connect</h2>
+    </div>
 
-    <button>Add Contact</button>
+    <div class="user-info">
+         Welcome back<br>
+         Alyssa Dambeck!
+    </div>
 
-    <button>Search</button>
+    <button onclick="searchContact()">
+        Search
+    </button>
 
-    <button>Logout</button>
+    <button onclick="addContact()">
+        Add Contact
+    </button>
+
+    <button onclick="location.href='members.html'">
+        Members
+    </button>
+
+    <button onclick="doLogout()">
+        Logout
+    </button>
 
 </div>
 
@@ -36,8 +59,9 @@
     <div class="top-bar">
 
         <input
-        type="text"
-        placeholder="Search Contacts">
+            id="searchText"
+            type="text"
+            placeholder="Search Contacts">
 
     </div>
 

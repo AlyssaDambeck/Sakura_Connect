@@ -47,7 +47,7 @@ function doLogin()
 
             if(jsonObject.id < 1)
             {
-                alert("Login failed");
+                alert(jsonObject.error);
                 return;
             }
 

@@ -13,6 +13,17 @@ let lastName =
 
 let contacts = [];
 
+window.onload = function()
+{
+    document.getElementById(
+        "userName"
+    ).innerHTML =
+        "Welcome Back<br>" +
+        firstName +
+        " " +
+        lastName;
+};
+
 function doLogout()
 {
     localStorage.clear();
@@ -58,9 +69,10 @@ function searchContact()
             this.status == 200
         )
         {
-            console.log(
-                xhr.responseText
-            );
+            let jsonObject =
+                JSON.parse(xhr.responseText);
+
+            console.log(jsonObject.results);
         }
     };
 

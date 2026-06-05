@@ -17,25 +17,17 @@ function doRegister()
 
     let tmp =
     {
-        /*
         firstName: firstName,
         lastName: lastName,
         login: login,
         password: password
-        */
-       
-        "firstName":"Alyssa",
-        "lastName":"Dambeck",
-        "login":"alyssa",
-        "password":"test123"
-
     };
 
     let jsonPayload =
         JSON.stringify(tmp);
 
     let url =
-        urlBase + "/SignUp.php";
+        urlBase + "/Register.php";
 
     let xhr =
         new XMLHttpRequest();
@@ -49,14 +41,18 @@ function doRegister()
 
     xhr.onreadystatechange = function()
     {
-        if(
-            this.readyState == 4 &&
-            this.status == 200
-        )
+        if(this.readyState == 4)
         {
-            alert(
-                "Account Created!"
-            );
+            let jsonObject =
+                JSON.parse(xhr.responseText);
+
+            if(jsonObject.error != "")
+            {
+                alert(jsonObject.error);
+                return;
+            }
+
+            alert("Account Created!");
 
             window.location.href =
                 "index.html";

@@ -53,6 +53,20 @@ body{
     gap:15px;
 }
 
+.welcome-text{
+    font-size:14px;
+    color:#f5d7df;
+    text-align:center;
+}
+
+.user-name{
+    font-size:20px;
+    font-weight:600;
+    color:white;
+    text-align:center;
+    margin-top:4px;
+}
+
 .user-info{
     text-align: center;
     margin-bottom: 30px;

@@ -18,7 +18,6 @@ window.onload = function()
     document.getElementById(
         "userName"
     ).innerHTML =
-        "Welcome Back<br>" +
         firstName +
         " " +
         lastName;

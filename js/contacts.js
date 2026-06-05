@@ -35,6 +35,8 @@ function doLogout()
 
 function displayContacts(results)
 {
+    contacts = results;
+    
     let grid =
         document.getElementById(
             "contactsGrid"
@@ -267,4 +269,60 @@ function deleteContact(id)
     xhr.send(
         jsonPayload
     );
+}
+function editContact(id)
+{
+    let contact = contacts.find(c => c.ID == id);
+
+    if(!contact)
+    {
+        alert("Contact not found");
+        return;
+    }
+
+    let newFirstName = prompt("First Name", contact.FirstName);
+    let newLastName = prompt("Last Name", contact.LastName);
+    let phoneNumber = prompt("Phone Number", contact.PhoneNumber);
+    let emailAddress = prompt("Email Address", contact.EmailAddress);
+
+    let tmp =
+    {
+        id: id,
+        userId: parseInt(userId),
+        newFirstName: newFirstName,
+        newLastName: newLastName,
+        phoneNumber: phoneNumber,
+        emailAddress: emailAddress
+    };
+
+    let jsonPayload = JSON.stringify(tmp);
+
+    let url = urlBase + "/UpdateContact.php";
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+
+    xhr.setRequestHeader(
+        "Content-type",
+        "application/json; charset=UTF-8"
+    );
+
+    xhr.onreadystatechange = function()
+    {
+        if(this.readyState == 4 && this.status == 200)
+        {
+            let jsonObject = JSON.parse(xhr.responseText);
+
+            if(jsonObject.error != "")
+            {
+                alert(jsonObject.error);
+                return;
+            }
+
+            searchContact();
+        }
+    };
+
+    xhr.send(jsonPayload);
 }

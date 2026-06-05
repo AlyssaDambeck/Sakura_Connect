@@ -36,11 +36,12 @@ $stmt = $conn->prepare(
 	AND UserID = ?"
 );
 
+$id = $inData["id"];
+
 $stmt->bind_param(
-	"ssi",
-	$firstName,
-	$lastName,
-	$userId
+    "ii",
+    $id,
+    $userId
 );
 
 if ($stmt->execute())

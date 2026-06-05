@@ -21,7 +21,7 @@
 		);
 
 
-		$stmt->bind_param("ss", $inData["login"], $inData["password"]);
+		$stmt->bind_param("s", $inData["login"]);
 		$stmt->execute();
 		$result = $stmt->get_result();
 

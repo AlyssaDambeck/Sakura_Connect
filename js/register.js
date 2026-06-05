@@ -17,10 +17,18 @@ function doRegister()
 
     let tmp =
     {
+        /*
         firstName: firstName,
         lastName: lastName,
         login: login,
         password: password
+        */
+       
+        "firstName":"Alyssa",
+        "lastName":"Dambeck",
+        "login":"alyssa",
+        "password":"test123"
+
     };
 
     let jsonPayload =

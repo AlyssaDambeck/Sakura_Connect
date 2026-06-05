@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 		$stmt = $conn->prepare($sql);
 		$stmt->bind_param("s", $login);
 		$stmt->execute();
+		$searchResults = "";
 
 		$result = $stmt->get_result();
 		$rows = mysqli_num_rows($result);

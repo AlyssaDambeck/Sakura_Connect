@@ -1,3 +1,6 @@
+const urlBase =
+    "https://sakuraconnect.online/LAMPAPI";
+
 function doRegister()
 {
     let firstName =
@@ -6,30 +9,51 @@ function doRegister()
     let lastName =
         document.getElementById("lastName").value;
 
-    let username =
+    let login =
         document.getElementById("username").value;
 
     let password =
         document.getElementById("password").value;
 
-    if(
-        firstName === "" ||
-        lastName === "" ||
-        username === "" ||
-        password === ""
-    )
+    let tmp =
     {
-        alert("Please fill out all fields.");
-        return;
-    }
+        firstName: firstName,
+        lastName: lastName,
+        login: login,
+        password: password
+    };
 
-    console.log("Registering User");
+    let jsonPayload =
+        JSON.stringify(tmp);
 
-    /*
-        API CODE GOES HERE
-    */
+    let url =
+        urlBase + "/SignUp.php";
 
-    alert("Account Created!");
+    let xhr =
+        new XMLHttpRequest();
 
-    window.location.href = "index.html";
+    xhr.open("POST", url, true);
+
+    xhr.setRequestHeader(
+        "Content-type",
+        "application/json; charset=UTF-8"
+    );
+
+    xhr.onreadystatechange = function()
+    {
+        if(
+            this.readyState == 4 &&
+            this.status == 200
+        )
+        {
+            alert(
+                "Account Created!"
+            );
+
+            window.location.href =
+                "index.html";
+        }
+    };
+
+    xhr.send(jsonPayload);
 }

@@ -2,7 +2,7 @@
 /* API endpoint - SearchUsers. Checks if a login name is taken. */
 
 // ADD THESE CORS HEADERS AT THE TOP
-header('Access-Control-Allow-Origin: http://sakuraconnect.online');
+header('Access-Control-Allow-Origin: https://sakuraconnect.online');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Access-Control-Allow-Credentials: true');
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 	$searchCount = 0;
 
 	// Connect to DB
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
+	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "SakuraConnect");
 
 	if ($conn->connect_error)
 	{

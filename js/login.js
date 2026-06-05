@@ -1,26 +1,84 @@
-const urlBase = "http://sakuraconnect.online/LAMPAPI";
+const urlBase =
+    "https://sakuraconnect.online/LAMPAPI";
+
+let userId = 0;
+let firstName = "";
+let lastName = "";
 
 function doLogin()
 {
-    let username =
+    let login =
         document.getElementById("loginName").value;
 
     let password =
         document.getElementById("loginPassword").value;
 
-    if(username === "" || password === "")
+    let tmp =
     {
-        alert("Please enter a username and password.");
-        return;
-    }
+        login: login,
+        password: password
+    };
 
-    console.log("Login Attempt");
-    console.log(username);
-    console.log(password);
+    let jsonPayload =
+        JSON.stringify(tmp);
 
-    /*
-        API CODE GOES HERE
-    */
+    let url =
+        urlBase + "/Login.php";
 
-    window.location.href = "contacts.html";
+    let xhr =
+        new XMLHttpRequest();
+
+    xhr.open("POST", url, true);
+
+    xhr.setRequestHeader(
+        "Content-type",
+        "application/json; charset=UTF-8"
+    );
+
+    xhr.onreadystatechange = function()
+    {
+        if(
+            this.readyState == 4 &&
+            this.status == 200
+        )
+        {
+            let jsonObject =
+                JSON.parse(xhr.responseText);
+
+            if(jsonObject.id < 1)
+            {
+                alert("Login failed");
+                return;
+            }
+
+            userId =
+                jsonObject.id;
+
+            firstName =
+                jsonObject.firstName;
+
+            lastName =
+                jsonObject.lastName;
+
+            localStorage.setItem(
+                "userId",
+                userId
+            );
+
+            localStorage.setItem(
+                "firstName",
+                firstName
+            );
+
+            localStorage.setItem(
+                "lastName",
+                lastName
+            );
+
+            window.location.href =
+                "contacts.html";
+        }
+    };
+
+    xhr.send(jsonPayload);
 }

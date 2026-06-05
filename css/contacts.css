@@ -29,12 +29,17 @@ body{
 }
 
 .logo{
-    font-size: 65px;
+    font-size: 70px;
+    line-height: 1;
+    margin: 30px;
 }
 
 .logo-section h2{
     margin-top: 13px;
     font-size: 30px;
+    color:#f8e8ff;
+    text-shadow:
+        0 0 10px rgba(241,227,243,.35);
 
 }
 
@@ -58,16 +63,18 @@ body{
 
 .welcome-text{
     font-size:14px;
-    color:#f5d7df;
+    color:#f4dff8;
     text-align:center;
 }
 
 .user-name{
     font-size:20px;
     font-weight:600;
-    color:white;
+    color:#f8e8ff;
     text-align:center;
     margin-top:4px;
+
+    text-shadow: 0 0 8px rgba(241, 227, 243, .25);
 }
 
 .user-info{

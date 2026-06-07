@@ -64,7 +64,7 @@ while ($row = $result->fetch_assoc())
 
 if (count($results) === 0)
 {
-	returnWithError("No Records Found");
+    returnWithInfo([]);
 }
 else
 {

@@ -130,10 +130,12 @@ function searchContact()
 
             if(jsonObject.error != "")
             {
+                console.log("SHOWING EMPTY STATE");
                 document.getElementById(
                     "contactsGrid"
                 ).innerHTML = "";
 
+                console.log("EMPTY STATE CODE RUNNING");
                 document.getElementById(
                     "emptyState"
                 ).style.display = "block";

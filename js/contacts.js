@@ -225,6 +225,9 @@ function addContact()
             this.status == 200
         )
         {
+            showMessage(
+                "Contact Added!"
+            );
             searchContact();
         }
     };
@@ -232,6 +235,7 @@ function addContact()
     xhr.send(
         jsonPayload
     );
+
 }
 
 function deleteContact(id)
@@ -272,6 +276,10 @@ function deleteContact(id)
             this.status == 200
         )
         {
+            showMessage(
+                "Contact Deleted!"
+            );
+
             searchContact();
         }
     };
@@ -279,6 +287,7 @@ function deleteContact(id)
     xhr.send(
         jsonPayload
     );
+
 }
 function editContact(id)
 {
@@ -290,10 +299,29 @@ function editContact(id)
         return;
     }
 
-    let newFirstName = prompt("First Name", contact.FirstName);
-    let newLastName = prompt("Last Name", contact.LastName);
-    let phoneNumber = prompt("Phone Number", contact.PhoneNumber);
-    let emailAddress = prompt("Email Address", contact.EmailAddress);
+    document.getElementById(
+        "editPanel"
+    ).style.display = "flex";
+
+    document.getElementById(
+        "editFirstName"
+    ).value =
+        contact.FirstName;
+
+    document.getElementById(
+        "editLastName"
+    ).value =
+        contact.LastName;
+
+    document.getElementById(
+        "editPhoneNumber"
+    ).value =
+        contact.PhoneNumber;
+
+    document.getElementById(
+        "editEmailAddress"
+    ).value =
+        contact.EmailAddress;
 
     let tmp =
     {
@@ -330,9 +358,37 @@ function editContact(id)
                 return;
             }
 
+            showMessage(
+                "Contact Updated!"
+            );
+
             searchContact();
         }
     };
 
     xhr.send(jsonPayload);
+
+}
+
+function showMessage(message)
+{
+    let box =
+        document.getElementById(
+            "messageBox"
+        );
+
+    box.innerHTML =
+        message;
+
+    box.style.display =
+        "block";
+
+    setTimeout(
+        function()
+        {
+            box.style.display =
+                "none";
+        },
+        3000
+    );
 }

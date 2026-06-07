@@ -203,6 +203,31 @@ body{
 
     color:white;
 }
+.message-box{
+
+    display:none;
+
+    position:fixed;
+
+    top:30px;
+    right:30px;
+
+    padding:18px 25px;
+
+    border-radius:15px;
+
+    background:
+    rgba(120,220,140,.92);
+
+    color:white;
+
+    font-weight:600;
+
+    z-index:9999;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+}
 
 .petals{
     position: fixed;

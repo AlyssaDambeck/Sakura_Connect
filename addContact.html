@@ -1,21 +1,99 @@
-<div class="add-contact-card">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Contact</title>
 
-    <h1>Add Contact</h1>
+    <link rel="stylesheet" href="css/contacts.css">
+    <link rel="stylesheet" href="css/addContact.css">
 
-    <input id="firstName" placeholder="First Name">
+    <script src="js/addContact.js"></script>
+</head>
 
-    <input id="lastName" placeholder="Last Name">
+<body>
 
-    <input id="phoneNumber" placeholder="Phone Number">
+<div class="petals">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
-    <input id="emailAddress" placeholder="Email Address">
+<div class="sidebar">
 
-    <button onclick="saveContact()">
-        Save Contact
-    </button>
+    <div class="logo-section">
+        <div class="logo">&#127800;</div>
+        <h2>Sakura Connect</h2>
+    </div>
+
+    <div class="user-info">
+
+        <div class="welcome-text">
+            Welcome Back
+        </div>
+
+        <div
+            class="user-name"
+            id="userName">
+        </div>
+
+    </div>
 
     <button onclick="location.href='contacts.html'">
-        Cancel
+        Contacts
+    </button>
+
+   <button class="active-nav">
+        Add Contact
+    </button>
+
+    <button onclick="location.href='members.html'">
+        Members
+    </button>
+
+    <button onclick="doLogout()">
+        Logout
     </button>
 
 </div>
+
+<div class="main-content">
+
+    <div class="add-contact-card">
+
+        <h1>Add Contact</h1>
+
+        <input
+            id="firstName"
+            type="text"
+            placeholder="First Name">
+
+        <input
+            id="lastName"
+            type="text"
+            placeholder="Last Name">
+
+        <input
+            id="phoneNumber"
+            type="text"
+            placeholder="Phone Number">
+
+        <input
+            id="emailAddress"
+            type="email"
+            placeholder="Email Address">
+
+        <button onclick="saveContact()">
+            Save Contact
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

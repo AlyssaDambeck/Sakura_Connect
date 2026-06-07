@@ -24,6 +24,17 @@ body{
     background-size:cover;
 }
 
+.active-nav{
+    background:#f4dff8 !important;
+    color:#5c4233 !important;
+    font-weight:700;
+
+    border:2px solid rgba(255,255,255,.6);
+
+    box-shadow:
+        0 0 15px rgba(248,232,255,.5);
+}
+
 .empty-state{
     width: 450px;
     margin: 80px auto;

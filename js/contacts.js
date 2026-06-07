@@ -130,12 +130,20 @@ function searchContact()
 
             if(jsonObject.error != "")
             {
-                alert(
-                    jsonObject.error
-                );
+                document.getElementById(
+                    "contactsGrid"
+                ).innerHTML = "";
+
+                document.getElementById(
+                    "emptyState"
+                ).style.display = "block";
 
                 return;
             }
+
+            document.getElementById(
+                "emptyState"
+            ).style.display = "none";
 
             displayContacts(
                 jsonObject.results

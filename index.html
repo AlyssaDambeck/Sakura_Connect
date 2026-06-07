@@ -51,18 +51,21 @@
             placeholder="Username">
     </div>
 
-    <div class="input-group">
-        <input
-            id="loginPassword"
-            type="password"
-            placeholder="Password">
-    </div>
+    <form onsubmit="doLogin(); return false;">
+    
+        <div class="input-group">
+            <input id="loginName" type="text" placeholder="Username">
+        </div>
 
-    <button
-        class="login-btn"
-        onclick="doLogin()">
-        Sign In
-    </button>
+        <div class="input-group">
+            <input id="loginPassword" type="password" placeholder="Password">
+        </div>
+
+        <button type="submit" class="login-btn">
+            Sign In
+        </button>
+
+    </form>
 
     <a href="register.html" class="register-link">
         Create Account

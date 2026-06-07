@@ -82,3 +82,24 @@ function doLogin()
 
     xhr.send(jsonPayload);
 }
+
+document.addEventListener("DOMContentLoaded", function()
+{
+    document.getElementById("loginPassword")
+        .addEventListener("keypress", function(event)
+    {
+        if(event.key === "Enter")
+        {
+            doLogin();
+        }
+    });
+
+    document.getElementById("loginName")
+        .addEventListener("keypress", function(event)
+    {
+        if(event.key === "Enter")
+        {
+            doLogin();
+        }
+    });
+});

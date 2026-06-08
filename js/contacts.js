@@ -326,7 +326,6 @@ function editContact(id)
     ).value =
         contact.EmailAddress;
 
-    xhr.send(jsonPayload);
 
 }
 

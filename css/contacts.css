@@ -37,6 +37,43 @@ body{
 
     z-index:1000;
 }
+.add-contact-card{
+
+    width:400px;
+
+    padding:30px;
+
+    background:
+    rgba(255,245,245,.18);
+
+    backdrop-filter:blur(22px);
+
+    border:
+    1px solid rgba(255,255,255,.60);
+
+    border-radius:20px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.18);
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.add-contact-card input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:
+    rgba(255,255,255,.85);
+}
 
 .active-nav{
     background:#f4dff8 !important;

@@ -326,49 +326,6 @@ function editContact(id)
     ).value =
         contact.EmailAddress;
 
-    let tmp =
-    {
-        id: id,
-        userId: parseInt(userId),
-        newFirstName: newFirstName,
-        newLastName: newLastName,
-        phoneNumber: phoneNumber,
-        emailAddress: emailAddress
-    };
-
-    let jsonPayload = JSON.stringify(tmp);
-
-    let url = urlBase + "/UpdateContact.php";
-
-    let xhr = new XMLHttpRequest();
-
-    xhr.open("POST", url, true);
-
-    xhr.setRequestHeader(
-        "Content-type",
-        "application/json; charset=UTF-8"
-    );
-
-    xhr.onreadystatechange = function()
-    {
-        if(this.readyState == 4 && this.status == 200)
-        {
-            let jsonObject = JSON.parse(xhr.responseText);
-
-            if(jsonObject.error != "")
-            {
-                alert(jsonObject.error);
-                return;
-            }
-
-            showMessage(
-                "Contact Updated!"
-            );
-
-            searchContact();
-        }
-    };
-
     xhr.send(jsonPayload);
 
 }
@@ -393,5 +350,76 @@ function showMessage(message)
                 "none";
         },
         3000
+    );
+}
+
+function saveEdit()
+{
+    let tmp =
+    {
+        id:
+            editingContactId,
+
+        userId:
+            parseInt(userId),
+
+        newFirstName:
+            document.getElementById(
+                "editFirstName"
+            ).value,
+
+        newLastName:
+            document.getElementById(
+                "editLastName"
+            ).value,
+
+        phoneNumber:
+            document.getElementById(
+                "editPhoneNumber"
+            ).value,
+
+        emailAddress:
+            document.getElementById(
+                "editEmailAddress"
+            ).value
+    };
+
+    let xhr =
+        new XMLHttpRequest();
+
+    xhr.open(
+        "POST",
+        urlBase + "/UpdateContact.php",
+        true
+    );
+
+    xhr.setRequestHeader(
+        "Content-type",
+        "application/json; charset=UTF-8"
+    );
+
+    xhr.onreadystatechange =
+    function()
+    {
+        if(
+            this.readyState == 4 &&
+            this.status == 200
+        )
+        {
+            showMessage(
+                "Contact Updated!"
+            );
+
+            document.getElementById(
+                "editPanel"
+            ).style.display =
+                "none";
+
+            searchContact();
+        }
+    };
+
+    xhr.send(
+        JSON.stringify(tmp)
     );
 }

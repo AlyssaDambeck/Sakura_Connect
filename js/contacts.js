@@ -13,6 +13,8 @@ let lastName =
 
 let contacts = [];
 
+let editingContactId = 0;
+
 window.onload = function()
 {
     document.getElementById(
@@ -291,6 +293,7 @@ function deleteContact(id)
 }
 function editContact(id)
 {
+    editingContactId = id;
     let contact = contacts.find(c => c.ID == id);
 
     if(!contact)

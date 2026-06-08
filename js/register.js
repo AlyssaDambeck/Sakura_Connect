@@ -18,11 +18,10 @@ function doRegister()
     
     let tmp =
     {
-        FirstName: document.getElementById("firstName").value,
-        LastName: document.getElementById("lastName").value,
-        PhoneNumber: document.getElementById("phoneNumber").value,
-        EmailAddress: document.getElementById("emailAddress").value,
-        UserID: parseInt(userId)
+        firstName: firstName,
+        lastName: lastName,
+        login: login,
+        password: password
     };
 
     let jsonPayload =
@@ -45,8 +44,10 @@ function doRegister()
     {
         if(this.readyState == 4)
         {
+            console.log(xhr.responseText);
+
             let jsonObject =
-                JSON.parse(xhr.responseText);
+            JSON.parse(xhr.responseText);
 
             if(jsonObject.error != "")
             {

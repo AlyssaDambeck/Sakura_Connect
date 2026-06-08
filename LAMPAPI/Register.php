@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 			http_response_code(200);
 
 			// Build response body (kept same format as your code)
-			$searchResults .= '{' . '"id": "' . $id . '' . '"}';
+			$searchResults .= '{"id":"' . $id . '"}';
 			returnWithInfo($searchResults);
 		}
 		else
